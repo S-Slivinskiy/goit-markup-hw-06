@@ -17,6 +17,7 @@ html {
   --gallery-text-color: #ffffff;
   --main-font: "Roboto", sans-serif;
   --other-font: "Open Sans", sans-serif;
+  --timing-fn: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .body {
   font-family: var (var(--main-font));
@@ -88,6 +89,14 @@ html {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.icon-call:hover,
+.icon-call:focus {
+  text-decoration: underline;
+}
+.icon-mail:hover,
+.icon-mail:focus {
+  text-decoration: underline;
+}
 .top-nav {
   margin: 0px;
   padding: 0px;
@@ -108,6 +117,7 @@ html {
 .logo {
   text-decoration: none;
   color: var(--text-color);
+  transition: color 250ms var(--timing-fn);
 }
 .logo-ART::before {
   content: "M";
@@ -160,6 +170,7 @@ html {
   font-weight: bold;
   font-size: 14px;
   padding: 5px 14px;
+  transition: color 250ms var(--timing-fn);
 }
 
 .nav-link:hover,
@@ -213,6 +224,7 @@ html {
   font-weight: 300;
   font-size: 14px;
   background-color: var(--green-blog-blog-and-focus);
+  transition: background-color 250ms var(--timing-fn);
 }
 .top-baner-link {
   display: flex;
@@ -369,6 +381,7 @@ html {
 }
 .gallery-list {
   display: flex;
+  overflow: hidden;
 }
 .gallery-list a {
   color: var(--gallery-text-color);
@@ -406,6 +419,7 @@ html {
   width: 200px;
   height: 40px;
   position: absolute;
+  transition: background-color 250ms var(--timing-fn);
 }
 .price {
   display: flex;
@@ -421,6 +435,7 @@ html {
   height: 40px;
   position: absolute;
   right: 0;
+  transition: background-color 250ms var(--timing-fn);
 }
 .gallery-link:hover .gallery-header {
   background-color: var(--green-choice-and-top-line);
@@ -507,6 +522,7 @@ html {
   font-weight: 300;
   font-size: 16px;
   background-color: var(--green-blog-blog-and-focus);
+  transition: background-color 250ms var(--timing-fn);
 }
 .blog-list {
   margin-right: 30px;
@@ -593,7 +609,6 @@ html {
   margin: 0;
   padding: 0;
   position: absolute;
-  display: none;
   justify-content: space-between;
   align-items: inherit;
   flex-wrap: wrap;
@@ -602,6 +617,8 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opasity 250ms var(--timing-fn) 250ms;
 }
 .actions button {
   margin: 0;
@@ -619,6 +636,7 @@ html {
   border: 1px solid #ffffff;
   background-repeat: no-repeat;
   background-position: center;
+  transition: background-color 250ms var(--timing-fn);
 }
 .gallery .icon-share {
   margin: 0;
@@ -631,6 +649,7 @@ html {
   border: 1px solid #ffffff;
   background-repeat: no-repeat;
   background-position: center;
+  transition: background-color 250ms var(--timing-fn);
 }
 .gallery .icon-clock {
   margin: 0;
@@ -643,6 +662,7 @@ html {
   border: 1px solid #ffffff;
   background-repeat: no-repeat;
   background-position: center;
+  transition: background-color 250ms var(--timing-fn);
 }
 .gallery .icon-cart {
   margin: 0;
@@ -654,6 +674,7 @@ html {
   border: 1px solid #ffffff;
   background-repeat: no-repeat;
   background-position: center;
+  transition: background-color 250ms var(--timing-fn);
 }
 .actions button {
   border: 1px solid #ffffff;
@@ -662,7 +683,6 @@ html {
   margin-right: 0px;
 }
 .gallery-link::before {
-  display: none;
   position: absolute;
   content: "";
   width: 234px;
@@ -670,6 +690,8 @@ html {
   top: 6px;
   left: 11px;
   background-color: rgba(0, 0, 0, 0.4);
+  transform: translateY(110%);
+  transition: transform 250ms var(--timing-fn);
 }
 .icon-like:hover,
 .icon-like:focus {
@@ -693,9 +715,11 @@ html {
 }
 .gallery-link:hover .actions {
   display: flex;
+  opacity: 1;
 }
 .gallery-link:hover::before {
   display: block;
+  transform: translateY(0);
 }
 .mail-enter {
   display: flex;
@@ -723,14 +747,7 @@ html {
   background-image: url(../images/icon/enter-mail.png);
   background-repeat: no-repeat;
   background-position: center;
-}
-.icon-call:hover,
-.icon-call:focus {
-  text-decoration: underline;
-}
-.icon-mail:hover,
-.icon-mail:focus {
-  text-decoration: underline;
+  transition: background-color 250ms var(--timing-fn);
 }
 .account-nav:hover,
 .account-nav:focus {
@@ -738,13 +755,13 @@ html {
 }
 .top-baner-link:hover,
 .top-baner-link:focus {
-  background-color: var(--green-choice-and-top-line);
+  background-color: var(--green-choice-price);
 }
 .blog-link:hover,
 .blog-link:focus {
-  background-color: var(--green-choice-and-top-line);
+  background-color: var(--green-choice-price);
 }
 .button:hover,
 .button:focus {
-  background-color: var(--green-choice-and-top-line);
+  background-color: var(--green-choice-price);
 }
